@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Prediction</title>
+    <style>
+        body {
+            background-color: #3498db;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+        form {
+            margin-top: 20px;
+        }
+        label, input {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #27ae60;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .logo img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    </div>
+    <div class="container">
+        <h2>League of Legends Match Outcome Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="goldDiff">Gold Difference:</label>
+            <input type="text" id="goldDiff" name="goldDiff">
+            
+            <label for="xpDiff">XP Difference:</label>
+            <input type="text" id="xpDiff" name="xpDiff">
+            
+            <label for="dragonDiff">Dragon Difference:</label>
+            <input type="text" id="dragonDiff" name="dragonDiff">
+            
+            <label for="heraldDiff">Herald Difference:</label>
+            <input type="text" id="heraldDiff" name="heraldDiff">
+            
+            <label for="towerDiff">Tower Difference:</label>
+            <input type="text" id="towerDiff" name="towerDiff">
+            
+            <label for="inhibitorDiff">Inhibitor Difference:</label>
+            <input type="text" id="inhibitorDiff" name="inhibitorDiff">
+            
+            <label for="turretPlateDiff">Turret Plate Difference:</label>
+            <input type="text" id="turretPlateDiff" name="turretPlateDiff">
+            
+            <label for="minionDiff">Minion Difference:</label>
+            <input type="text" id="minionDiff" name="minionDiff">
+            
+            <label for="jungleMinionDiff">Jungle Minion Difference:</label>
+            <input type="text" id="jungleMinionDiff" name="jungleMinionDiff">
+            
+            <label for="damageDiff">Damage Difference:</label>
+            <input type="text" id="damageDiff" name="damageDiff">
+            
+            <label for="firstBlood">First Blood (1 for Yes, 0 for No):</label>
+            <input type="text" id="firstBlood" name="firstBlood">
+            
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
+
